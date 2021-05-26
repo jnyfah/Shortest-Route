@@ -1,6 +1,6 @@
 .App {
   text-align: center;
-  background-color: #282c34;
+
   min-height: 100vh;
   display: flex;
   position: relative;
@@ -10,34 +10,32 @@
   color: white;
 }
 
-
 .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
 
-.rowc{
+.rowc {
   display: flex;
   flex-direction: row;
   position: absolute;
-  top: -10px;
+  left: 25%;
 }
 
-.dest{
+.dest {
   position: relative;
-  left: 40%;
-  top: 200px;
+  left: 150%;
+  top: -200px;
 }
-.source{
+.source {
   position: relative;
-  
-  top: 200px;
+  top: -150px;
 }
 
-.butn {
+.btn {
   position: relative;
-  left: -30%;
-  top: 300px;
+  left: 70%;
+  top: -150px;
 }
 
 @media (prefers-reduced-motion: no-preference) {
