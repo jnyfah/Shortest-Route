@@ -5,7 +5,7 @@ This repository includes ....
 ## Dependencies
 
 - <h5>CMake :</h5>
-  [CMake](https://cmake.org/) is a cross-platform open-source meta-build system which can build, test and package software. It can be used to support multiple native build environments including make, Apple's xcode and Microsoft Visual Studio
+[CMake](https://cmake.org/) is a cross-platform open-source meta-build system which can build, test and package software. It can be used to support multiple native build environments including make, Apple's xcode and Microsoft Visual Studio
 
 #### why would you want to use a build system ??
 
