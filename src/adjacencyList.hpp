@@ -28,6 +28,10 @@
 
 #include "../utils/json.hpp"
 
+nlohmann::json jsonData;
+
+
+
 
 
 /*
@@ -48,7 +52,7 @@ public:
         std::string line;
 
         if (!file.is_open()) {
-            throw std::invalid_argument("Unknown Input given; The filename \"" + inputFileName + "\" does not exist");
+            throw std::invalid_argument("Unknown Input given; The filename " + inputFileName + " does not exist");
         }
 
         while (std::getline(file, line)) {

@@ -9,9 +9,6 @@
 #include "adjacencyList.hpp"
 
 
-
-
-
 /*
 *
 * Class DijkstraShortestPath
@@ -97,18 +94,12 @@ private:
 
 
 
-
-
-
-int main() try {
+nlohmann::json findData(std::string cityA , std::string cityB) try {
     CSVReader csv("../utils/distance-km.csv");
     std::vector<std::vector<std::string>> m_csv = csv.getDataAsTable();
 
     MileageChartCSVToAdjacencyListCreator chart;
     AdjacencyList adjList = chart.create(m_csv);
-
-    std::string cityA = "Aba";
-    std::string cityB = "Bauchi";
 
     auto nodeIdA = adjList.getNodeId(cityA).value();
     auto nodeIdB = adjList.getNodeId(cityB).value();
@@ -116,20 +107,28 @@ int main() try {
     DijsktraShortestPath dijkstra(adjList, nodeIdA, nodeIdB);
     auto [minDistance, paths] = dijkstra.computePath();
     if (!paths.empty()) {
-        std::cout << "Distance between " << std::quoted(cityA) << " and " << std::quoted(cityB) << " is " << minDistance << "km\n";
-        std::cout << "The paths to follow are: \n";
+        
+        jsonData += {cityA, cityB, minDistance};
+
         for (auto iter = paths.begin(); iter != paths.end(); std::advance(iter, 1)) {
             auto nextCityId = std::next(iter) != paths.end() ? std::next(iter)->nodeId : nodeIdB;
             auto [currCityId, distance] = *iter;
-            std::cout << "\t" << adjList.getNodeName(currCityId).value()
-                      << "   to   " 
-                      << adjList.getNodeName(nextCityId).value() 
-                      << " is " << distance << "\n";
+            jsonData += {adjList.getNodeName(currCityId).value(), adjList.getNodeName(nextCityId).value(),distance };
+        
         }
     } else {
-        std::cout << "Unfortunately, there is no road between " << std::quoted(cityA) << " and " << std::quoted(cityB) << "\n";
+        jsonData["Unfortunately, there is no road between "] = {cityA ," and " ,cityB };
     }
+    return jsonData;
 
 } catch (std::exception& e) {
-    std::cerr << "[FATAL exception]: " << e.what() << "\n";
+    jsonData["[FATAL exception]"] = e.what();
+    return jsonData;
+ 
 }
+
+
+
+/*int main() {
+    std::cout<<findData("Aba", "Bauchi");
+}*/
