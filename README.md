@@ -1,5 +1,6 @@
 ![example workflow](https://github.com/jnyfah/Shortest-Route/actions/workflows/cmake.yml/badge.svg)
 ![GitHub](https://img.shields.io/github/license/jnyfah/Shortest-Route)
+[![Build status](https://ci.appveyor.com/api/projects/status/aw2kfy9o59mfjkij?svg=true)](https://ci.appveyor.com/project/jnyfah/shortest-route)
 # Shortest-Route
 
 This repository includes ....
