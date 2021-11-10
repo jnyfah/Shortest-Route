@@ -129,6 +129,6 @@ nlohmann::json findData(std::string cityA , std::string cityB) try {
 
 
 
-/*int main() {
+int main() {
     std::cout<<findData("Aba", "Bauchi");
-}*/
+}
