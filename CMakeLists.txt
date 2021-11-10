@@ -11,6 +11,12 @@ set_target_properties(Shortest-Route PROPERTIES LINK_FLAGS "${linkFlags}")
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+if(MSVC)
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /std:c++latest")
+else(MSVC)
+target_compile_features(${PROJECT_NAME} PRIVATE cxx_std_17)
+endif(MSVC)
+
 
 if (CMAKE_SYSTEM_NAME STREQUAL "Windows")
     target_compile_options(Shortest-Route PRIVATE /W4)
