@@ -2,7 +2,7 @@ project(Shortest-Route)
 
 cmake_minimum_required(VERSION 3.20.0)
 
-add_executable(${PROJECT_NAME} src/Dijkstra.cpp src/adjacencyList.hpp)
+add_library(${PROJECT_NAME} src/Dijkstra.cpp src/adjacencyList.hpp)
 
 set_target_properties(Shortest-Route PROPERTIES LINK_FLAGS "${linkFlags}")
 
