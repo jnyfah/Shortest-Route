@@ -1,3 +1,5 @@
+![example workflow](https://github.com/jnyfah/Shortest-Route/actions/workflows/cmake.yml/badge.svg)
+![GitHub](https://img.shields.io/github/license/jnyfah/Shortest-Route)
 # Shortest-Route
 
 This repository includes ....
