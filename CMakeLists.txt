@@ -14,9 +14,6 @@ SET(CMAKE_CPP_COMPILER em++)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 
-set( CMAKE_CXX_FLAGS "-s EXPORTED_FUNCTIONS=\"[${exports_string}]\""  )
-
-
 if (CMAKE_SYSTEM_NAME STREQUAL "Windows")
     target_compile_options(Shortest-Route PRIVATE /W4)
 elseif (CMAKE_SYSTEM_NAME STREQUAL "Linux")
