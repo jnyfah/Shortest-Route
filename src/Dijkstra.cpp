@@ -129,6 +129,14 @@ nlohmann::json findData(std::string cityA , std::string cityB) try {
 
 
 
-/*int main() {
-    std::cout<<findData("Aba", "Bauchi");
-}*/
+int main() {
+    jsonData["x"] = "lom";
+    std::ifstream file("distance-km.csv");
+    std::string line;
+   std::getline(file, line);
+   if (!file.is_open()) {
+            std::cout<< "not open";
+        }
+    std::cout << jsonData<< std::endl;
+  return 0;
+}

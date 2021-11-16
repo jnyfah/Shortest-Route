@@ -13,8 +13,11 @@ SET(CMAKE_C_COMPILER emcc)
 SET(CMAKE_CPP_COMPILER em++)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-
-set( CMAKE_CXX_FLAGS "-s EXPORTED_FUNCTIONS=\"[${exports_string}]\""  )
+if(MSVC)
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /std:c++latest")
+else(MSVC)
+target_compile_features(${PROJECT_NAME} PRIVATE cxx_std_17)
+endif(MSVC)
 
 
 if (CMAKE_SYSTEM_NAME STREQUAL "Windows")
@@ -22,6 +25,3 @@ if (CMAKE_SYSTEM_NAME STREQUAL "Windows")
 elseif (CMAKE_SYSTEM_NAME STREQUAL "Linux")
     target_compile_options(Shortest-Route PRIVATE -Wall -Wextra -Wpedantic)
 endif()
-
-
-
