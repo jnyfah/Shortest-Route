@@ -7,6 +7,8 @@
 */
 
 #include "adjacencyList.hpp"
+#include <emscripten/bind.h>
+#include <vector>
 
 
 /*
@@ -94,7 +96,9 @@ private:
 
 
 
-nlohmann::json findData(std::string cityA , std::string cityB) try {
+std::vector<std::string> Dijkstra(std::string cityA , std::string cityB) {
+      std::vector<std::string>result;
+try {
     CSVReader csv("../utils/distance-km.csv");
     std::vector<std::vector<std::string>> m_csv = csv.getDataAsTable();
 
@@ -108,35 +112,33 @@ nlohmann::json findData(std::string cityA , std::string cityB) try {
     auto [minDistance, paths] = dijkstra.computePath();
     if (!paths.empty()) {
         
-        jsonData += {cityA, cityB, minDistance};
+        result.push_back(std::to_string(minDistance));
+        result.push_back(cityA);
 
         for (auto iter = paths.begin(); iter != paths.end(); std::advance(iter, 1)) {
             auto nextCityId = std::next(iter) != paths.end() ? std::next(iter)->nodeId : nodeIdB;
             auto [currCityId, distance] = *iter;
-            jsonData += {adjList.getNodeName(currCityId).value(), adjList.getNodeName(nextCityId).value(),distance };
+            result.push_back(adjList.getNodeName(nextCityId).value());
         
         }
     } else {
-        jsonData["Unfortunately, there is no road between "] = {cityA ," and " ,cityB };
+        std::string res ("Unfortunately, there is no road between " + cityA + " and " +cityB );
+        result.push_back(res);
     }
-    return jsonData;
 
 } catch (std::exception& e) {
-    jsonData["[FATAL exception]"] = e.what();
-    return jsonData;
+    result.push_back(e.what());
  
+  }
+  return result;
 }
 
 
+EMSCRIPTEN_BINDINGS(module) {
+  emscripten::function("Dijkstra", &Dijkstra);
 
-int main() {
-    jsonData["x"] = "lom";
-    std::ifstream file("distance-km.csv");
-    std::string line;
-   std::getline(file, line);
-   if (!file.is_open()) {
-            std::cout<< "not open";
-        }
-    std::cout << jsonData<< std::endl;
-  return 0;
+  // register bindings for std::vector<int> and std::map<int, std::string>.
+  emscripten::register_vector<std::string>("vector<std::string>");
 }
+
+

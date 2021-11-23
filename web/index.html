@@ -1,5 +1,25 @@
+<!doctype html>
 <html>
-  <body>
-    <script src="gen/index.js"></script>
-  </body>
+  <script src="index.js"></script>
+  <script>
+  Module['onRuntimeInitialized'] = () => {
+
+
+var retVector = Module['Dijkstra']("Aba", "Bauchi");
+
+// vector size
+var vectorSize = retVector.size();
+
+
+// retrieve value from the vector
+for (var i = 0; i < retVector.size(); i++) {
+    console.log("Vector Value: ", retVector.get(i));
+}
+
+
+
+}
+
+  </script>
+
 </html>

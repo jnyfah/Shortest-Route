@@ -26,9 +26,6 @@
 #include <set>
 
 
-#include "../utils/json.hpp"
-
-nlohmann::json jsonData;
 
 
 
