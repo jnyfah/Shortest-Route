@@ -36,7 +36,7 @@ Using WebAssembly means using the right tool for the job. For instance, who want
 
 ## Environment setup
 
-To compile our C/C++ code to WebAssembly, we need a toolchain. This tool will be responsible for translating the code into WebAssembly format. To do that, we will install the Emscripten toolchain. It is an open-source project and can compile any portable C/C++ code into WebAssembly.
+To compile our C/C++ code to WebAssembly, we need a toolchain. This tool will be responsible for translating the code into WebAssembly format. To do that, we will install the [Emscripten](https://emscripten.org/index.html/) toolchain. It is an open-source project and can compile any portable C/C++ code into WebAssembly.
 
 ```bash
 cd ~/
@@ -53,3 +53,22 @@ emsdk_env.bat             (windows)
 source ./emsdk_env.sh      (unix)
 ```
 The updates that this makes to environment variables isn't persistent; it will need to be run again with the next reboot.
+
+## Compiling
+
+To compile the code: 
+
+```bash
+./build.sh
+```
+
+## Serving
+
+If you try to open the HTML file directly, your code probably will not run. Instead, the page will have to be served through an HTTP server
+Install the package `http-server` for the node application to be able to serve the html file:
+
+```bash
+./serve.sh
+```
+
+Now, open the browser and access `http://localhost:8080`

@@ -25,3 +25,4 @@ if (CMAKE_SYSTEM_NAME STREQUAL "Windows")
 elseif (CMAKE_SYSTEM_NAME STREQUAL "Linux")
     target_compile_options(Shortest-Route PRIVATE -Wall -Wextra -Wpedantic)
 endif()
+
