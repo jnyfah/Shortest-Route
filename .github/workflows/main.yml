@@ -9,60 +9,16 @@ on:
   pull_request:
 
 jobs:
-  lint:
-    name: lint
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/setup-python@v1
-      with:
-        python-version: '3.x'
-    - uses: actions/checkout@v1
-    - name: install tools
-      run: |
-        pip3 install flake8==3.7.8
-        sudo apt-get install clang-format
-    - run: flake8
-    - run: ./scripts/clang-format-diff.sh
   build:
     name: build
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        os: [ubuntu-latest, macos-latest, windows-latest]
+    runs-on: ubuntu-latest
     steps:
-    - uses: actions/setup-python@v1
-      with:
-        python-version: '3.x'
     - uses: actions/checkout@v1
       with:
         submodules: true
-    - name: install ninja (linux)
-      run: sudo apt-get install ninja-build
-      if: matrix.os == 'ubuntu-latest'
-    - name: install ninja (osx)
-      run: brew install ninja
-      if: matrix.os == 'macos-latest'
-    - name: install ninja (win)
-      run: choco install ninja
-      if: matrix.os == 'windows-latest'
-    - name: mkdir
-      run: mkdir -p out
-    - name: cmake
-      run: cmake .. -G Ninja -DWERROR=ON
-      working-directory: out
-      if: matrix.os != 'windows-latest'
-    - name: cmake (windows)
-      run: cmake .. -DWERROR=ON
-      working-directory: out
-      if: matrix.os == 'windows-latest'
     - name: build
-      run: cmake --build out
-    - name: unittests
-      run: cmake --build out --target run-unittests
-    - name: c-api-tests
-      run: cmake --build out --target run-c-api-tests
-    - name: tests
-      run: cmake --build out --target run-tests
+      run: |
+        rm build/ -rf
   emscripten:
     name: emscripten
     runs-on: ubuntu-latest
@@ -111,3 +67,20 @@ jobs:
     - run: make clang-release-ubsan
     - run: make test-clang-debug-ubsan
     - run: make test-clang-release-ubsan
+    - name: Setup Emscripten toolchain
+  # You may pin to the exact commit or the version.
+  # uses: mymindstorm/setup-emsdk@29ba4851d6da084ffdc1e0fc390efadbd75df9d1
+  uses: mymindstorm/setup-emsdk@v11
+  with:
+    # Version to install
+    version: # optional, default is latest
+    # If true will not download any version of Emscripten. emsdk will still be added to PATH.
+    no-install: # optional
+    # If true will not cache any downloads with tc.cacheDir.
+    no-cache: # optional
+    # Directory to cache emsdk in. This folder will go under $GITHUB_HOME (I.e. build dir) and be cached using @actions/cache.
+    actions-cache-folder: # optional, default is 
+    # Fetch package information for all the new tools and SDK versions
+    update: # optional
+    # Deprecated in favor of `update`.
+    update-tags: # optional
