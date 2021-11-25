@@ -1,6 +1,6 @@
 project(Shortest-Route)
 
-cmake_minimum_required(VERSION 3.16)
+cmake_minimum_required(VERSION 3.14)
 
 add_library(${PROJECT_NAME} src/Dijkstra.cpp src/adjacencyList.hpp)
 
@@ -12,6 +12,9 @@ set(CMAKE_CXX_STANDARD 17)
 SET(CMAKE_C_COMPILER emcc)
 SET(CMAKE_CPP_COMPILER em++)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+set(CMAKE_VERBOSE_MAKEFILE on)
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/build.emscripten)
 
 if(MSVC)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /std:c++latest")
