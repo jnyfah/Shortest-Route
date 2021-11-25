@@ -9,7 +9,7 @@
    </head>
 
    <body>
-      <h1>Autocomplete Example</h1>
+      <h1>Shortest Path</h1>
       <form autocomplete="on" method="POST" enctype="multipart/form-data" onsubmit="return check(event)">
          <div class="autocomplete" style="width:300px; top: 50px;">
             <input id="searchField1" type="text" name="city1" placeholder="Animals" />
@@ -571,7 +571,6 @@
             console.log(cityA);
             console.log(cityB);
 
-         Module['onRuntimeInitialized'] = () => {
          var retVector = Module['Dijkstra'](cityA, cityB);
 
          var vectorSize = retVector.size();
@@ -579,7 +578,8 @@
          for (var i = 0; i < retVector.size(); i++) {
             console.log("Vector Value: ", retVector.get(i));
          }
-      }
+
+         
       
          return false
       };
