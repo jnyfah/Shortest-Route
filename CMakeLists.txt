@@ -29,3 +29,5 @@ elseif (CMAKE_SYSTEM_NAME STREQUAL "Linux")
     target_compile_options(Shortest-Route PRIVATE -Wall -Wextra -Wpedantic)
 endif()
 
+
+include_directories(/emscripten/ /emscripten/emscripten/incoming/system/include)
