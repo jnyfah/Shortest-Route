@@ -35,20 +35,16 @@ jobs:
       # Execute tests defined by the CMake configuration.  
       # See https://cmake.org/cmake/help/latest/manual/ctest.1.html for more detail
       run: ctest -C ${{env.BUILD_TYPE}}
+      
+    - name: Setup Emscripten
+      uses: lovasoa/setup-emscripten@v1
+
     
-  emscripten:
-    name: emscripten
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v1
-      with:
-        submodules: true
-    - name: build
-      run: |
-        docker run -di --name emscripten -v $(pwd):/src trzeci/emscripten:1.39.10-upstream bash
-        docker exec emscripten emcc -v
-        docker exec emscripten emcmake cmake .
-        docker exec emscripten make -j 2 VERBOSE=1
+
+        
+      
+        
+  
         
         
       
