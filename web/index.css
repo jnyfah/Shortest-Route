@@ -51,3 +51,9 @@
     background-color: rgb(30, 255, 169) !important;
     color: #ffffff;
  }
+
+ canvas {
+   position: relative;
+   display: block;
+   top: 200px;
+ }
