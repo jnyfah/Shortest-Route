@@ -7,7 +7,6 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="stylesheet" href="index.css">
    </head>
-
    <body>
       <h1>Shortest Path</h1>
       <form autocomplete="on" method="POST" enctype="multipart/form-data" onsubmit="return check(event)">
@@ -560,7 +559,7 @@
          
          autocomplete(document.getElementById("searchField1"), animals);
          autocomplete(document.getElementById("searchField2"), animals);
-        
+         
          function canvas_arrow(context, fromx, fromy, tox, toy) {
             var headlen = 10; // length of head in pixels
             var dx = tox - fromx;
@@ -573,49 +572,44 @@
             context.lineTo(tox - headlen * Math.cos(angle + Math.PI / 6), toy - headlen * Math.sin(angle + Math.PI / 6));
          }
          
-
+         
          const check = (e) => {
             
             const form = new FormData(e.target);
             const cityA = form.get("city1");
             const cityB = form.get("city2");
-
+         
          var retVector = Module['Dijkstra'](cityA, cityB);
-
+         
          var vectorSize = retVector.size();
-
+         
           
-        var c=document.getElementById("myfillDrawing");
-        var ctx=c.getContext("2d");
-        ctx.strokeStyle= "#000000";
-        ctx.lineWidth = 0.5;
-        ctx.strokeRect(30, 0, 1500, 500);
-        ctx.clearRect(30, 0, 1500, 500);
-        ctx.fillStyle = "black";
-        ctx.font = "18px Arial";
-        ctx.fillText( "The distance from "+ cityA + " to " + cityB + " is " +retVector.get(0) +"Km" , 135, 55);
-        ctx.fillText( " Paths to follow :" , 150, 100);
-
-        var len =0;
-        
-
-        for (var i = 1; i < retVector.size(); i++) {
+         var c=document.getElementById("myfillDrawing");
+         var ctx=c.getContext("2d");
+         ctx.strokeStyle= "#000000";
+         ctx.lineWidth = 0.5;
+         ctx.strokeRect(30, 0, 1500, 500);
+         ctx.clearRect(30, 0, 1500, 500);
+         ctx.fillStyle = "black";
+         ctx.font = "18px Arial";
+         ctx.fillText( "The distance from "+ cityA + " to " + cityB + " is " +retVector.get(0) +" Km" , 135, 55);
+         ctx.fillText( " Paths to follow :" , 150, 100);
+         
+         
+         for (var i = 1; i < retVector.size(); i++) {
            
             ctx.fillText(retVector.get(i), 100 + i*150, 155);
-            var str = retVector.get(i);
-            console.log(str.length);
             canvas_arrow(ctx, 100 + i*150 + 100, 150, 100 + i*150 + 130, 150);
             ctx.stroke();
             
          }
-
+         
          return false
-      };
-
-
+         };
+         
+         
           
       </script>
-      
       <canvas id="myfillDrawing" width="10000px" height="10000px"></canvas>
    </body>
 </html>
