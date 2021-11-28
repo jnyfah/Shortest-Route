@@ -2,7 +2,8 @@
 [![Build status](https://ci.appveyor.com/api/projects/status/aw2kfy9o59mfjkij?svg=true)](https://ci.appveyor.com/project/jnyfah/shortest-route)
 # Shortest-Route
 
-This repository includes code for implementing a dijkstras algorithm in c++ to be used in modern web development with the help of webassembly. The program uses auto complete to allow users select input from available cities, it displays the shortest distance between the two selcected cities with paths to follow
+This repository includes code for implementing a dijkstras algorithm in c++ to be used in modern web development with the help of webassembly. The program uses auto complete to allow users select input from available cities, it displays the shortest distance between the two selcected cities with paths to follow.
+ PS: I am not soo good with frontend :sweat: and to run this on windows, just change ```.sh``` files to ```.bat``` :hugs:
 
 ![Alt text](/utils/image.png?raw=true)
 
@@ -33,11 +34,11 @@ High level languages like C, C++ and Rust are compiled into binary format .wasm 
 ![alt text](https://www.tutorialspoint.com/webassembly/images/wasm.jpg)
 
 #### Why WASM
-Using WebAssembly means using the right tool for the job. For instance, who wants to write a banking app in JS?. If you're running anything that relies on mathematical numerical accuracy or speed that meant, until now, another AJAX call to have another language do alllllllll the math. With WebAssembly, we can do this in the browser, with, say, Rust.
+Using WebAssembly means using the right tool for the job. For instance, who wants to write a banking app in JS?. If you're running anything that relies on mathematical numerical accuracy or speed that meant, until now, another AJAX call to have another language do alllllllll the math. With WebAssembly, we can do this in the browser, with, say Rust.
 
 ## Environment setup
 
-To compile our C/C++ code to WebAssembly, we need a toolchain. This tool will be responsible for translating the code into WebAssembly format. To do that, we will install the [Emscripten](https://emscripten.org/index.html/) toolchain. It is an open-source project and can compile any portable C/C++ code into WebAssembly.
+To compile our C/C++ code to WebAssembly, we need a toolchain. This tool will be responsible for translating the code into WebAssembly format. To do that, we will install the [Emscripten](https://emscripten.org/index.html/) toolchain. It is an open-source project that can compile any portable C/C++ code into WebAssembly.
 
 ```bash
 cd ~/
