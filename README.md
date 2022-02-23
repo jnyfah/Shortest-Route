@@ -2,7 +2,7 @@
 [![Build status](https://ci.appveyor.com/api/projects/status/aw2kfy9o59mfjkij?svg=true)](https://ci.appveyor.com/project/jnyfah/shortest-route)
 # Shortest-Route
 
-This repository includes code for implementing a dijkstras algorithm in c++ to be used in modern web development with the help of webassembly. The program uses auto complete to allow users select input from available cities, it displays the shortest distance between the two selcected cities with paths to follow.
+This repository includes code for implementing a dijkstras algorithm in c++ to be used in modern web development with the help of webassembly. The program uses auto complete to allow users select input from available cities, it displays the shortest distance between the two selected cities with paths to follow.
 
 PS: I am not soo good with frontend :sweat: and to run this on windows, just change ```.sh``` files to ```.bat``` :hugs:
 
