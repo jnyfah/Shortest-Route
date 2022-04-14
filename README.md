@@ -45,8 +45,8 @@ To compile our C/C++ code to WebAssembly, we need a toolchain. This tool will be
 cd ~/
 git clone https://github.com/emscripten-core/emsdk.git
 cd emsdk
-emsdk install latest
-emsdk activate latest
+./emsdk install latest
+./emsdk activate latest
 ```
 With the tools installed, you will also want to set the some environment variables. Add variables to PATH:
 
