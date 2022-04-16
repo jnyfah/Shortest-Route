@@ -1,0 +1,86 @@
+@media screen and (max-width: 1024px) {
+  .hero .description h2 {
+    font-size: 2.2em;
+    font-weight: 400;
+    line-height: 1.3;
+    margin-bottom: 25px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .hero {padding-top: 15vh;}
+  .hero .container .mid {
+    padding: 0vh 2% 0px;
+
+    align-items: flex-start;
+  }
+
+  .hero .container .description {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .hero .placeholder {
+    width: 70%;    
+    height: 300px;
+    border-radius: 15px;
+    margin: 50px auto 0;
+  }
+
+  .hamb {
+    display: block;
+  }
+
+  header nav {
+    width: 300px;
+    height: auto;
+    background-color: #212121;
+    padding: 30px 40px 10px;
+
+    position: absolute;
+    top: 80px;
+    right: -300px;
+
+    transition: .5s right;
+  }
+
+  header nav.right {
+    right: 0px;
+  }
+
+  header nav a {
+    display: block;
+    font-size: 1.1em;
+    font-weight: 600;
+    color: #ffffff;
+    margin: 0px 0px 20px 0px;
+    padding: 5px 0 0 8px;
+  }
+
+  header nav a:not(:last-child):before {
+    left: 0px;
+  }
+
+  header nav button a {
+    margin: 25px 0px 30px;
+    color: #0f9969;
+  }
+
+  header nav button a:hover i {
+    color: #ffffff;
+  }
+
+}
+
+@media screen and (max-width: 425px) {
+  .hero {padding-top: 10vh;}
+
+  .hero .container .description {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .hero .placeholder {
+    margin: 20px auto 0;
+  }
+}

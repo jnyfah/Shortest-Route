@@ -1,0 +1,225 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap');
+/* google fonts */
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 1.5;
+  color: #212121;
+
+  overflow-x: hidden;
+
+  position: relative;
+}
+
+h1, h2 {line-height: 1.1;}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+  color: #076343;
+}
+
+img {
+  display: inline-block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* ends base */
+
+.container {
+  width: 1280px;
+  max-width: 95%;
+  margin: 0 auto;
+}
+
+button {
+  display: inline-block;
+  outline: none;
+  border: none;
+  background-color: transparent;
+}
+
+/* ends public style */
+
+header {
+  width: 100%;
+  height: auto;
+  padding: 30px 0 50px;
+
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 2;
+}
+
+header .container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header .logo h2 a {
+  font-size: 1.5em;
+  letter-spacing: 5px;
+}
+
+header nav a {
+  font-size: .95em;
+  font-weight: 600;
+  margin-left: 15px;
+  padding: 5px 8px;
+
+  position: relative;
+}
+
+header nav a:not(:last-child):before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  background-color: #0f996900;
+  border-radius: 50%;
+
+  position: absolute;
+  top: 0px;
+  right: 0px;
+
+  transition: .5s background-color;
+}
+
+header nav a:not(:last-child):hover:before {
+  background-color: #0f9969;
+}
+
+header nav button a {
+  margin-left: 10px;
+  color: #212121;
+}
+
+header nav button a i {
+  font-size: 1.5em;
+  vertical-align: middle;
+  margin-right: 5px;
+}
+
+header nav button a:hover i {
+  color: #0f9969;
+}
+
+/* ends header */
+
+.hero {
+  width: 100%;
+  height: 100vh;
+  background-color: #e0faf1;
+
+  overflow-x: hidden;
+
+  padding-top: 20vh;
+}
+
+.hero .container {
+  height: 100%;
+
+  position: relative;
+}
+
+.hero .container .mid {
+  padding: 0 2%;
+
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.hero .container .description {width: 40%;}
+
+.hero .description h2 {
+  font-size: 2.8em;
+  font-weight: 400;
+  line-height: 1.3;
+  margin-bottom: 25px;
+}
+
+.hero .description h2 span {
+  color: #076343;
+}
+
+.hero .description p {
+  font-size: .95em;
+  margin-bottom: 35px;
+}
+
+.hero .description .cta a {
+  font-weight: 600;
+  padding: 8px 25px;
+  border: 2px solid #076343;
+  border-radius: 50px;
+  transition-duration: .3s;
+  transition-property: background, border, color, box-shadow;
+}
+
+.hero .description .cta a:first-child {
+  background-color: #076343;
+  color: #ffffff;
+  margin: 0 15px 10px 0;
+}
+
+.hero .description .cta a:first-child:hover {
+  background-color: #0f9969;
+  border: 2px solid #0f9969;
+}
+
+.hero .description .cta a:last-child:hover {
+  background-color: #ffffff;
+  border: 2px solid #ffffff;
+  color: #222222;
+  box-shadow: 0 0 10px #21212160;
+}
+
+.hero .placeholder {
+  width: 55%;
+  height: 600px;
+
+ 
+}
+
+.hero .connect {
+  position: absolute;
+  bottom: 30px;
+  left: 0px;
+}
+
+.hero .connect a i {
+  display: inline-block;
+  font-size: 1.4em;
+  margin-right: 10px;
+}
+
+.hero .connect a i:hover {
+  color: #0f9969;
+}
+
+.hero a.book {
+  font-size: .8em;
+  font-weight: 600;
+  
+  position: absolute;
+  bottom: 30px;
+  right: 0px;
+}
+
+.hero a.book i {margin-right: 5px;}
+
+/* ends hero */
