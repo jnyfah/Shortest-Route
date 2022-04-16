@@ -7,6 +7,24 @@
   margin: 0;
 }
 
+.col-65 {
+  float: left;
+  width: 5%;
+  margin-top: 6px;
+  padding-left: 90%;
+  position: relative;
+}
+
+
+.col-75 {
+  float: left;
+  width: 35%;
+  margin-top: 6px;
+  padding-left: 2%;
+}
+
+
+
 body {
   font-family: 'Montserrat', sans-serif;
   font-size: 16px;
@@ -223,3 +241,4 @@ header nav button a:hover i {
 .hero a.book i {margin-right: 5px;}
 
 /* ends hero */
+

@@ -16,6 +16,7 @@
   <!-- boxicon cdn -->
   <link rel="stylesheet"
   href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+  <link rel="stylesheet" href="index.css">
 
 </head>
 <body>
@@ -37,8 +38,37 @@
 
   <section class="hero">
     <div class="container">
-     
 
+      <form method="post" id="cities-form" onsubmit="return validateForm()" action="/calculate.php">
+         <fieldset>
+            <legend>Calculate Distance Between Cities in Nigeria</legend>
+            <div class="row">
+               <div class="col-75">
+                  <p>From: </p>
+                  </br>
+                  <input type="text" id="fname" name="firstname" placeholder="Your name..">
+                  </br>
+                  </br>
+                </div>
+
+                <div class="col-75">
+                  <p>To: </p>
+                  </br>
+                  <input type="text" id="fname" name="firstname" placeholder="Your name..">
+                  </br>
+                  </br>
+                </div>
+
+               </br>
+            </div>
+         </fieldset>
+      </form>
+
+
+
+
+      
+     
      
     </div>
   </section>
