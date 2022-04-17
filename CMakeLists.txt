@@ -38,5 +38,5 @@ file(GLOB_RECURSE CORE_SRC src/*.cpp)
 add_executable(index ${CORE_SRC})
 
 set_target_properties(index PROPERTIES LINK_FLAGS "-s NO_DISABLE_EXCEPTION_CATCHING  --std=c++1z --preload-file ${CMAKE_SOURCE_DIR}/utils --bind")
-set_target_properties(client PROPERTIES LINK_FLAGS "-s DEMANGLE_SUPPORT=1 --preload-file assets --bind")
+
 
