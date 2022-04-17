@@ -17,15 +17,15 @@
 
          
 
-       <form id='survey-form'>
+       <form id='survey-form' autocomplete="on" method="POST" enctype="multipart/form-data" onsubmit="return check(event)">
          <div class="form-row">
            <div class='form-input'>
-               <label id='name-label'>From :</label>
-               <input type='text' id='name' placeholder='Enter your name' class='form-input-size' required />
+               <label id='src-label'>From :</label>
+               <input type='text' id='searchField1' name="city1" placeholder='source' class='form-input-size' required />
            </div>
            <div class='form-input'>
-               <label id='email-label'>To :</label>
-               <input type='email' id='email' placeholder='Enter your email' class='form-input-size' required />
+               <label id='dest-label'>To :</label>
+               <input type='text' id='searchField2' name="city2" placeholder='Destination' class='form-input-size' required />
            </div>
 
            </div>
@@ -36,6 +36,12 @@
            </div>
        </form>
    </div>
+
+
+   <script src="index.js"></script>
+   <script src="app.js"></script>
+
+   <canvas id="myfillDrawing" width="10000px" height="10000px"></canvas>
 
 </body>
 </html>
