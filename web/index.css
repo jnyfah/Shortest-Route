@@ -166,6 +166,31 @@ h1{
   font-style: italic;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5)
 }
+
+
+
+
+
+.autocomplete-items div {
+  padding: 10px;
+  cursor: pointer;
+  border: 1px solid #4f4747;
+  border-bottom: 1px solid #d4d4d4;
+  position: relative;
+}
+.autocomplete-items div:hover {
+  background-color: #e9e9e9;
+}
+.autocomplete-active {
+  background-color: rgb(30, 255, 169) !important;
+  color: #ffffff;
+}
+
+canvas {
+ position: relative;
+ display: block;
+ top: 200px;
+}
   
   
   
