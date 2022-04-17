@@ -1,80 +1,42 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Foodie the good morning fodd</title>
-
-  <!-- favicon -->
-  <link rel="icon" href="favicon.png">
-
-  <!-- add css stylesheet -->
-  <link rel="stylesheet" href="assets/css/style.css">
-  <link rel="stylesheet" href="assets/css/mquery.css">
-
-  <!-- boxicon cdn -->
-  <link rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
-  <link rel="stylesheet" href="index.css">
-
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
+   <link rel="stylesheet" type="text/css" href="index.css">
+   <title>Shortest-Route</title>
 </head>
 <body>
+   <div class="container">
+       <header>
+           <h1 id='title'>Shortest Route &#128739; between Nigerian Cities &#127475;&#127468;</h1>
+           
+       </header>
 
-  <header>
-    <div class="container">
-      <div class="logo">
-        <h2><a href="#">Shortest-Route.</a></h2>
-      </div>
+         
 
-      <nav class="slide">
-        <a href="#">home</a>
-        
+       <form id='survey-form'>
+         <div class="form-row">
+           <div class='form-input'>
+               <label id='name-label'>From :</label>
+               <input type='text' id='name' placeholder='Enter your name' class='form-input-size' required />
+           </div>
+           <div class='form-input'>
+               <label id='email-label'>To :</label>
+               <input type='email' id='email' placeholder='Enter your email' class='form-input-size' required />
+           </div>
 
-        <button><a href="#"><i class='bx bxs-edit-location'></i> About</a></button>
-      </nav>
-    </div>
-  </header>
+           </div>
+           
 
-  <section class="hero">
-    <div class="container">
-
-      <form method="post" id="cities-form" onsubmit="return validateForm()" action="/calculate.php">
-         <fieldset>
-            <legend>Calculate Distance Between Cities in Nigeria</legend>
-            <div class="row">
-               <div class="col-75">
-                  <p>From: </p>
-                  </br>
-                  <input type="text" id="fname" name="firstname" placeholder="Your name..">
-                  </br>
-                  </br>
-                </div>
-
-                <div class="col-75">
-                  <p>To: </p>
-                  </br>
-                  <input type="text" id="fname" name="firstname" placeholder="Your name..">
-                  </br>
-                  </br>
-                </div>
-
-               </br>
-            </div>
-         </fieldset>
-      </form>
-
-
-
-
-      
-     
-     
-    </div>
-  </section>
-
- 
-  <script src="assets/js/script.js"></script>
+           <div class='form-input'>
+               <button type='submit' id='submit'>Calculate</button>
+           </div>
+       </form>
+   </div>
 
 </body>
 </html>
+
