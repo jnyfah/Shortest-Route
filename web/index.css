@@ -188,10 +188,8 @@ h1{
   color: #4f4747;
 }
 
-canvas {
- position: relative;
- display: block;
- top: 200px;
+#myfillDrawing {
+  width: 100%;
 }
   
   

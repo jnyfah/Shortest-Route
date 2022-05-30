@@ -564,14 +564,17 @@
          
           
          var c=document.getElementById("myfillDrawing");
+         var heightRatio = 1.5;
+         c.height = c.width * heightRatio;
          var ctx=c.getContext("2d");
+         ctx.scale(0.5, 0.5)
          ctx.strokeStyle= "#000000";
          ctx.lineWidth = 0.5;
          ctx.strokeRect(30, 0, 1500, 500);
          ctx.clearRect(30, 0, 1500, 500);
          ctx.fillStyle = "black";
-         ctx.font = "18px Arial";
-         ctx.fillText( "The distance from "+ cityA + " to " + cityB + " is " +retVector.get(0) +" Km" , 135, 55);
+         ctx.font = "15px Arial";
+         ctx.fillText( "The distance from "+ cityA + " to " + cityB + " is " +retVector.get(0) +" Km" , 30, 55);
          ctx.fillText( " Paths to follow :" , 150, 100);
          
          
@@ -582,6 +585,8 @@
             ctx.stroke();
             
          }
+
+         
          
          return false
          };
