@@ -190,6 +190,7 @@ h1{
 
 #myfillDrawing {
   width: 100%;
+  object-fit: contain;
 }
   
   

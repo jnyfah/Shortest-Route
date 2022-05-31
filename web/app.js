@@ -563,29 +563,43 @@
          var vectorSize = retVector.size();
          
           
-         var c=document.getElementById("myfillDrawing");
-         var heightRatio = 1.5;
-         c.height = c.width * heightRatio;
-         var ctx=c.getContext("2d");
-         ctx.scale(0.5, 0.5)
-         ctx.strokeStyle= "#000000";
-         ctx.lineWidth = 0.5;
-         ctx.strokeRect(30, 0, 1500, 500);
-         ctx.clearRect(30, 0, 1500, 500);
-         ctx.fillStyle = "black";
-         ctx.font = "15px Arial";
-         ctx.fillText( "The distance from "+ cityA + " to " + cityB + " is " +retVector.get(0) +" Km" , 30, 55);
-         ctx.fillText( " Paths to follow :" , 150, 100);
-         
-         
-         for (var i = 1; i < retVector.size(); i++) {
-           
-            ctx.fillText(retVector.get(i), 100 + i*150, 155);
-            canvas_arrow(ctx, 100 + i*150 + 100, 150, 100 + i*150 + 130, 150);
-            ctx.stroke();
-            
-         }
+         var canvas =document.getElementById("myfillDrawing"); 
+         var ctx = canvas.getContext('2d');
 
+            // Set display size (css pixels).
+            var size = 1000;
+            canvas.style.width = size + "px";
+            canvas.style.height = size + "px";
+
+            
+            
+
+            // Set actual size in memory (scaled to account for extra pixel density).
+            var scale = window.devicePixelRatio; // Change to 1 on retina screens to see blurry canvas.
+            canvas.width = size * scale;
+            canvas.height = size * scale;
+
+            // Normalize coordinate system to use css pixels.
+            ctx.scale(scale, scale);
+
+            ctx.fillStyle = "#bada55";
+            //ctx.fillRect(1, 1, 300, 300);
+            ctx.fillStyle = "#121212";
+            ctx.font = '18px Arial';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+
+            var x = size / 4;
+            var y = size / 10;
+
+            //var textString = "I love MDN";
+            //ctx.fillText(textString, x, y)
+
+            ctx.fillText( "The distance from "+ cityA + " to " + cityB + " is " +retVector.get(0) +" Km" , x, y);
+            //ctx.fillText( " Paths to follow :" , 150, 100);
+         
+         
+            
          
          
          return false
