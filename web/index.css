@@ -188,11 +188,19 @@ h1{
   color: #4f4747;
 }
 
-#myfillDrawing {
-  width: 100%;
-  object-fit: contain;
-}
+
   
+.outer {
+  position: relative;
+  width: 100%;
+  padding-bottom: 100%;
+ }
+ 
+ #myfillDrawing {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+ }
   
   
  

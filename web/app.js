@@ -585,7 +585,7 @@
             ctx.fillStyle = "#bada55";
             //ctx.fillRect(1, 1, 300, 300);
             ctx.fillStyle = "#121212";
-            ctx.font = '18px Arial';
+            ctx.font = '18px Arial Bold';
             ctx.textAlign = 'center';
             ctx.textBaseline = 'middle';
 
@@ -596,7 +596,25 @@
             //ctx.fillText(textString, x, y)
 
             ctx.fillText( "The distance from "+ cityA + " to " + cityB + " is " +retVector.get(0) +" Km" , x, y);
-            //ctx.fillText( " Paths to follow :" , 150, 100);
+            ctx.fillText( " Paths to follow :" , x, y+=30);
+
+            for (var i = 1; i < retVector.size()-1; i++) {
+           
+               ctx.fillText(retVector.get(i), x+ 100, y+ (50 * i));
+
+               ctx.font = '15px Arial';
+
+               ctx.fillText("to", x+ 200, y+ (48 * i));
+
+               ctx.font = '18px Arial Bold';
+
+               canvas_arrow(ctx, x+ 170, y+ (50 * i), x+ 230, y+ (50 * i));
+
+               ctx.fillText(retVector.get(i+1), x+ 300, y+ (50 * i));
+
+               
+               ctx.stroke();
+            }
          
          
             
