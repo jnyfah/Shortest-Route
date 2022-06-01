@@ -2,7 +2,7 @@
 [![Build status](https://ci.appveyor.com/api/projects/status/aw2kfy9o59mfjkij?svg=true)](https://ci.appveyor.com/project/jnyfah/shortest-route)
 # Shortest-Route
 
-This repository includes code for implementing a dijkstras algorithm in c++ to be used in modern web development with the help of webassembly. The program uses auto complete to allow users select input from available cities, it displays the shortest distance between the two selected cities with paths to follow.
+This repository includes code for implementing a Dijkstra's algorithm in c++ to be used in modern web development with the help of webassembly. The program uses auto complete to allow users select input from available cities, it displays the shortest distance between the two selected cities with paths to follow.
 
 PS: I am not soo good with frontend :sweat: and to run this on windows, just change ```.sh``` files to ```.bat``` :hugs:
 
@@ -21,7 +21,7 @@ PS: I am not soo good with frontend :sweat: and to run this on windows, just cha
 
 - ### JSON for Modern C++ :
 
-  [JSON for Modern C++](https://json.nlohmann.me/) is a c++ json library, with an intuitive syntax, trivial integration, memory efficieny and speeds up development by adding JSON support with a single header.
+  [JSON for Modern C++](https://json.nlohmann.me/) is a c++ json library, with an intuitive syntax, trivial integration, memory efficient and speeds up development by adding JSON support with a single header.
 
 - ### Webassembly :
 [WebAssembly](https://webassembly.org/) also known as WASM (web assembly state machine) is not just a programming language or instruction set, it is also a compilation target for other languages to compile to, as well as a language in itself. 
