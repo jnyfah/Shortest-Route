@@ -17,7 +17,7 @@ PS: I am not soo good with frontend :sweat: and to run this on windows, just cha
 
 1. Cross platform portability
 2. Dependency management
-3. Continous Integration
+3. Continuos Integration
 
 - ### JSON for Modern C++ :
 
