@@ -1,3 +1,7 @@
 build
-src/Dijkstra
 .vscode
+cmake_install.cmake
+CMakeFiles/
+libShortest-Route.a
+CMakeCache.txt
+Makefiles
