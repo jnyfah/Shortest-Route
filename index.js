@@ -196,7 +196,7 @@ Module['FS_createPath']("/", "utils", true, true);
     }
 
     }
-    loadPackage({"files": [{"filename": "/utils/distance-km.csv", "start": 0, "end": 1462078}, {"filename": "/utils/json.hpp", "start": 1462078, "end": 2271567}], "remote_package_size": 2271567});
+    loadPackage({"files": [{"filename": "/utils/image.png", "start": 0, "end": 51840}, {"filename": "/utils/distance-km.csv", "start": 51840, "end": 1513918}, {"filename": "/utils/json.hpp", "start": 1513918, "end": 2323407}], "remote_package_size": 2323407});
 
   })();
 

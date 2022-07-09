@@ -8,7 +8,7 @@ To check it out [visit our website](https://jnyfah.github.io/Shortest-Route/web/
 
 PS: I am not soo good with frontend :sweat: and to run this on windows, just change ```.sh``` files to ```.bat``` :hugs:
 
-![Alt text](/utils/image.png?raw=true)
+![Alt text](/web/image.png?raw=true)
 
 ## Dependencies
 
@@ -63,7 +63,9 @@ The updates that this makes to environment variables isn't persistent; it will n
 To compile the code: 
 
 ```bash
-./build.sh
+emcmake cmake 
+make
+emcc --bind -o index.js src/Dijkstra.cpp --std=c++1z --preload-file utils || exit 1
 ```
 
 ## Serving
@@ -72,11 +74,8 @@ If you try to open the HTML file directly, your code probably will not run. Inst
 Install the package `http-server` for the node application to be able to serve the html file:
 
 ```bash
-./serve.sh
+emrun --port 8080 index.html
 ```
 
 Now, open the browser and access `http://localhost:8080`
 
-
-#### Future Work
-Port to cmake to make this easier
