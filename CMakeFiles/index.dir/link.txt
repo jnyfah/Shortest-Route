@@ -1,0 +1,1 @@
+/home/jennifer/Documents/Repo/emsdk/upstream/emscripten/em++    -s NO_DISABLE_EXCEPTION_CATCHING  --std=c++1z --preload-file /home/jennifer/Documents/Repo/Shortest-Route/utils --bind @CMakeFiles/index.dir/objects1.rsp  -o web/index.js 

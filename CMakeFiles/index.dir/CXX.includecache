@@ -1,0 +1,44 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/jennifer/Documents/Repo/Shortest-Route/src/Dijkstra.cpp
+adjacencyList.hpp
+/home/jennifer/Documents/Repo/Shortest-Route/src/adjacencyList.hpp
+emscripten/bind.h
+-
+vector
+-
+
+/home/jennifer/Documents/Repo/Shortest-Route/src/adjacencyList.hpp
+iostream
+-
+string
+-
+vector
+-
+fstream
+-
+sstream
+-
+optional
+-
+algorithm
+-
+unordered_map
+-
+iomanip
+-
+queue
+-
+cmath
+-
+tuple
+-
+set
+-
+

@@ -1,0 +1,2 @@
+/home/jennifer/Documents/Repo/emsdk/upstream/emscripten/emar qc libShortest-Route.a  CMakeFiles/Shortest-Route.dir/src/Dijkstra.cpp.o
+/home/jennifer/Documents/Repo/emsdk/upstream/emscripten/emranlib libShortest-Route.a
