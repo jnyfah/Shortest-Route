@@ -1,7 +1,7 @@
-build
+build/
 .vscode
 cmake_install.cmake
 CMakeFiles/
 libShortest-Route.a
 CMakeCache.txt
-Makefiles
+Makefile
