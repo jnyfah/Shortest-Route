@@ -4,7 +4,7 @@
 
 This repository includes code for implementing a Dijkstra's algorithm in c++ to be used in modern web development with the help of webassembly. The program uses auto complete to allow users select input from available cities, it displays the shortest distance between the two selected cities with paths to follow.
 
-To check it out [visit our website](https://jnyfah.github.io/Shortest-Route/web/)
+To check it out [visit our website](https://jnyfah.github.io/Shortest-Route/)
 
 PS: I am not soo good with frontend :sweat: and to run this on windows, just change ```.sh``` files to ```.bat``` :hugs:
 
