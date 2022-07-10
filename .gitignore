@@ -6,3 +6,5 @@ libShortest-Route.a
 CMakeCache.txt
 Makefile
 index.data
+index.js
+index.wasm

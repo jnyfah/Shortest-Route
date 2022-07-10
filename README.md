@@ -4,9 +4,10 @@
 
 This repository includes code for implementing a Dijkstra's algorithm in c++ to be used in modern web development with the help of webassembly. The program uses auto complete to allow users select input from available cities, it displays the shortest distance between the two selected cities with paths to follow.
 
-PS: I am not soo good with frontend :sweat: and to run this on windows, just change ```.sh``` files to ```.bat``` :hugs:
+To test it out [visit this web page](https://jnyfah.github.io/Shortest-Route/)
 
-![Alt text](/utils/image.png?raw=true)
+PS: I am not soo good with frontend :sweat: :sweat: 
+![Alt text](/web/image.png?raw=true)
 
 ## Dependencies
 
@@ -39,10 +40,9 @@ Using WebAssembly means using the right tool for the job. For instance, who want
 
 ## Environment setup
 
-To compile our C/C++ code to WebAssembly, we need a toolchain. This tool will be responsible for translating the code into WebAssembly format. To do that, we will install the [Emscripten](https://emscripten.org/index.html/) toolchain. It is an open-source project that can compile any portable C/C++ code into WebAssembly.
+To compile our C/C++ code to WebAssembly, we need a toolchain. This tool will be responsible for translating the code into WebAssembly format. To do that, we will install the [Emscripten](https://emscripten.org/index.html) toolchain. It is an open-source project that can compile any portable C/C++ code into WebAssembly.
 
-```
-cd ~/
+```cmd
 git clone https://github.com/emscripten-core/emsdk.git
 cd emsdk
 ./emsdk install latest
@@ -62,8 +62,11 @@ The updates that this makes to environment variables isn't persistent; it will n
 To compile the code: 
 
 ```bash
-./build.sh
+emcmake cmake 
+emcc --bind -o index.js src/Dijkstra.cpp --std=c++1z --preload-file utils || exit 1
 ```
+
+This would generate an `index.js`, `index.wasm` and `index.data` files in the root folder
 
 ## Serving
 
@@ -71,7 +74,8 @@ If you try to open the HTML file directly, your code probably will not run. Inst
 Install the package `http-server` for the node application to be able to serve the html file:
 
 ```bash
-./serve.sh
+emrun --port 8080 index.html
 ```
 
 Now, open the browser and access `http://localhost:8080`
+
