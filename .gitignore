@@ -8,3 +8,4 @@ Makefile
 index.data
 index.js
 index.wasm
+emsdk/tmp/

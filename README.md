@@ -20,10 +20,6 @@ PS: I am not soo good with frontend :sweat: :sweat:
 2. Dependency management
 3. Continuos Integration
 
-- ### JSON for Modern C++ :
-
-  [JSON for Modern C++](https://json.nlohmann.me/) is a c++ json library, with an intuitive syntax, trivial integration, memory efficient and speeds up development by adding JSON support with a single header.
-
 - ### Webassembly :
 [WebAssembly](https://webassembly.org/) also known as WASM (web assembly state machine) is not just a programming language or instruction set, it is also a compilation target for other languages to compile to, as well as a language in itself. 
 WASM is augmentation of the abilities of JS by allowing other languages to operate in the browser, it executes binary code in the browser.
@@ -38,12 +34,12 @@ High level languages like C, C++ and Rust are compiled into binary format .wasm 
 #### Why WASM
 Using WebAssembly means using the right tool for the job. For instance, who wants to write a banking app in JS?. If you're running anything that relies on mathematical numerical accuracy or speed that meant, until now, another AJAX call to have another language do alllllllll the math. With WebAssembly, we can do this in the browser, with, say Rust.
 
-## Environment setup
+## Getting Started
 
-To compile our C/C++ code to WebAssembly, we need a toolchain. This tool will be responsible for translating the code into WebAssembly format. To do that, we will install the [Emscripten](https://emscripten.org/index.html) toolchain. It is an open-source project that can compile any portable C/C++ code into WebAssembly.
+To compile our C/C++ code to WebAssembly, we need a toolchain. This tool will be responsible for translating the code into WebAssembly format. To do that, we will install the [Emscripten](https://emscripten.org/index.html) toolchain. It is an open-source project that can compile any portable C/C++ code into WebAssembly. Emscripten has already been added to this repository as a submodule.
 
 ```cmd
-git clone https://github.com/emscripten-core/emsdk.git
+git clone --recursive https://github.com/jnyfah/Shortest-Route
 cd emsdk
 ./emsdk install latest
 ./emsdk activate latest
@@ -62,6 +58,7 @@ The updates that this makes to environment variables isn't persistent; it will n
 To compile the code: 
 
 ```bash
+cd ..
 emcmake cmake 
 emcc --bind -o index.js src/Dijkstra.cpp --std=c++1z --preload-file utils || exit 1
 ```
