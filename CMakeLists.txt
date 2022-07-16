@@ -2,6 +2,17 @@ project(Shortest-Route)
 
 cmake_minimum_required(VERSION 3.14)
 
+include(ExternalProject)
+
+ExternalProject_Add (emsdk
+    GIT_REPOSITORY https://github.com/emscripten-core/emsdk
+    GIT_TAG 961e66c5099e1119dda25f7a8945d155fc561c90
+    PREFIX   "${PROJECT_BINARY_DIR}/emsdk"
+    CONFIGURE_COMMAND   ./emsdk install latest
+    BUILD_COMMAND  ./emsdk activate latest
+    INSTALL_COMMAND     source ./emsdk_env.sh  
+)
+
 add_library(${PROJECT_NAME} src/Dijkstra.cpp src/adjacencyList.hpp)
 
 set_target_properties(Shortest-Route PROPERTIES LINK_FLAGS "${linkFlags}")
