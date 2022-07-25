@@ -37,6 +37,7 @@ Using WebAssembly means using the right tool for the job. For instance, who want
 ## Getting Started
 
 To compile our C/C++ code to WebAssembly, we need a toolchain. This tool will be responsible for translating the code into WebAssembly format. To do that, we will install the [Emscripten](https://emscripten.org/index.html) toolchain. It is an open-source project that can compile any portable C/C++ code into WebAssembly. 
+
 Emscripten has already been added to this repository as a submodule.
 
 ```cmd
